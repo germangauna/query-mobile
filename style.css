@@ -21,11 +21,14 @@ que se vean las caracteristicas*/
 }
     p {
         font-size: 22px;
+        color: blue;
     }
-
-
-
+    
 }
+.parrafo-magic {
+    display: none;
+}
+
 /*condiciones en  las cuales podemos usar las media query*/
 
 /*(width - min-width - max-width - height: estas es para el tamaño de pantalla) 
@@ -45,4 +48,129 @@ para esto tendremos que crear en que orientacion tiene que estar el movil para q
     }
 }
 
+/*pint de pantalla, esta herramienta sirve para cuando quieras imprimir el documento vos les pongas las 
+condicones, estas condiciones serian por ejemplo: que la letra sea roja en la web y a la hora de imparimir
+seanegra, amarilla, o de la forma que nosotros hagamos las caractiristicas*/
 
+@media print {
+    p {
+        color: brown;
+        /* display: none; es para que no se pueda imprimir*/
+    }
+
+
+    
+    
+    /* tambien podemos hacer un mensaje que no se en la pagina y cuando mands imprimir aparece en la impresion,
+    o sea, a este es al reves, no queremos que apresca en la pagina pero si cuando imprimimos, por eso pondremos 
+    display: none;. y en el madia print pondremos display: block para que este mensaje se desbloquee a la hora
+    de impresion, tambien hay que saber, dato no menor, que ubicar los cambios directos de las clase en html arriba
+     de las medias query. en este caso @media print va a estsr despues de el cambiom que hicimos con la clase param
+     que el parafo no apresca*/
+    
+    
+    .parrafo-magic {
+        display: block;
+    }
+}
+/*en gral se usa para cosas mas obvia, se elimann fondos negrosd, intentar que predomine el gasto de tinta, usar
+tipografias ára impresionocultar piblicidad, que en las impresiones apreascan las url de propaganda, o el color
+ de los enlaces para que en las impresiones aprescan mas visibles */
+
+/* page */
+
+/*la regla page, que se usa para  tiene dos vaslores definidos, size y       , podemos establecer el formatro de 
+la pagina en l sentido si es a4, A5, legal, carta y pasa de una esturctura a otra, podes combinar el page con el 
+ print, latter. no es muy comun pero se puede aplicar */
+
+ @page {
+    size: 148mm 297mm; /* In */
+ }
+
+ /* existen media query para preferencais del usuario, es cuando el usuario quier evitar el color de fondo, evitar animacion, evitar escargas de archivos */
+
+@media (prefers-color-scheme: dark) {
+    body  {
+        background-color: gray;
+    }
+}
+
+/* si tenemos alguna animacion y queremos alterarle su estado, en este caso */
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    .animacion  {
+        transition: all 4s linear;
+    }
+}
+
+/* tambien esta la del banda ancha reducido, esto hacew que cosas sean de mas baja
+ calidad de imagern para que las cosas cargen mucho mas rapido */
+
+
+ @media (prefers-reduced-data: reduce) {
+    body  {
+        background-color: url("bajacalidad.jpg")
+
+    }
+}
+
+
+/* la recomendacion cuan do estemos haciendo css y quere ,eter alguna de estas reglas
+ es a medida que vamos escribiendo, debajo ir poneindo las mediaas query, 
+asi ya vamos organizando nuestro trabajo, y no tenemos que subir a revisar si lo
+ hicimos o no lo damos x hecho. */
+
+ /* ejemplo: */
+
+.animacion {
+    transition: all 2s;
+}
+
+.parrafo-magic {
+    color:blue
+}
+
+@media screen and (max-width:480px) {
+    .parrafo-magic {
+        color: black;
+    }
+}
+
+.products {
+    background-image: url ("products.svg");
+}
+
+@media print {
+    .products {
+        background-image: none;
+    }
+}
+
+/* medidas de las madias query para los disfentes dispositivos mobile-tablet-desktop */
+
+/* mobile */
+
+@media only screen and (max-width: 468px)  {
+    body {
+        background-color: red;
+    }
+}
+
+/* table */
+
+@media only screen and (min-width: 469px) and (max-width: 968px)  {
+    body {
+        background-color: blue;
+    }
+}
+
+/* desktop */
+
+
+@media only screen and (min-width: 961px)  {
+    body {
+        background-color: green;
+    }
+}
