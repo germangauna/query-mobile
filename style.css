@@ -1,0 +1,48 @@
+/* estructura basica */
+
+/* @media tipo de medio and (condicion: ancho max y ancho minimo) */
+/*las medias query son para que los cambios que querramos hacer segun
+el tmaño de pantalla en que estemos viendo la web, se pueden usar todas 
+las media query que quieran, aunque hay que ser prudentes, hay que ver 
+medidas y todas las reglas que conllevan a las que un cliente queira, 
+segun en el dispositivo que el cliente necesitew ver la web o el desee 
+que se vean las caracteristicas*/
+
+@media only screen and (max-width: 468px) {
+    body {
+        background-color: blue;
+    }
+ 
+@media only screen and (min-width: 468px) and (max-width:980px){
+    .products {
+        height:100vh;
+    }
+
+}
+    p {
+        font-size: 22px;
+    }
+
+
+
+}
+/*condiciones en  las cuales podemos usar las media query*/
+
+/*(width - min-width - max-width - height: estas es para el tamaño de pantalla) 
+- (aspect-ratio: esta es si el dispositvo tiene o encaja con la proporcion de aspecto indicada)-
+ (orientention: esta si el dispositivo esta horizontal o vertical) - 
+scan - resolution - monocrome - color-index*/
+
+/* ahora voy a crear una media query para que un texto cambie de tamaño cada vez que roten el movil,
+para esto tendremos que crear en que orientacion tiene que estar el movil para que actue de la forma
+ que quiero y el tamaño de fuente que quiero que tenga, en este caso quiero que cresca cuando este 
+ horizontal, pero tengo que ponerle una medida al principio para que funcione al cambiar a otra mas grande
+ por eso en el html tendremos que previamente poner una font-size menor a la que yo pongo que crezca*/
+
+@media only screen and (orientation: landscape)  {
+    p {
+        font-size: 44px;
+    }
+}
+
+
