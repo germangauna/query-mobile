@@ -174,3 +174,107 @@ asi ya vamos organizando nuestro trabajo, y no tenemos que subir a revisar si lo
         background-color: green;
     }
 }
+
+
+/* selectores */
+
+/* selector hijo, se utiliza para seleccionar a los hjijos directos en las clases, esto es para marcar cuando es hijo directo de la etiqueta */
+
+p > span {
+    color: blue
+}
+
+/* selector desendente */
+
+p span {
+    color: blue
+}
+
+/* selector adyasentes, como son de la misma familia y toienen el mismo padres los juntamos coin el mas +*/
+
+h1 + h2 {
+    font-size: 50px;
+
+}
+
+/* selector por atributos: nom bre del atributo- el nombre del atributo con el valor*/
+
+/* todos los que tengan el atributo class van a ser subrrayados */
+a[class] {
+    text-decoration: underline;
+}
+
+/* y todos los que tengas el atributo class y la clase tambien seria el valor */
+
+a[class="enlace"] {
+    text-decoration: underline;
+}
+a[href="contactos.html"] {
+    color:green;
+}
+
+/* lo que hace es aplicar a todas las que tengan al menos en uno de sus valores "enlaces" */
+
+a[class~="enlaces"] {
+    text-decoration: underline;
+}
+
+/* las pseudoclases y pseudoelementos */
+
+/* las pseudoclases lo que hacen es modificar la apriencia de los elemntos */
+
+.parrafo-children:first-chil{
+    color: red;
+}
+
+/* esta pseudoclases es para cuando tenes un link y todavia 
+no fue visitado esta de un color y una vez visitado se pone de otro color */
+
+.enlaces-pro:link {
+    color: red;
+}
+
+.enlaces-pro:visited {
+    color:violet;
+}
+
+/* se activa cuando ´pásamos el mouse por encima */
+
+.enlaces-pro:hover {
+    text-decoration: underline;
+}
+
+/* active se activa cuando el usuario pulsa el elemto */
+
+.enlaces-pro:active {
+    text-decoration: underline;
+}
+
+/* se activa cuando cuando y se utiliza en inputs cuando estan activados */
+.enlaces-pro:focus {
+    border: 2px solid black;
+}
+
+/* pseudoelementos modifica el estado de los elementos, nos permiten hacer cosas magicas */
+
+.parrafo-magic::first-line {
+    text-transform: uppercase;
+}
+/* si queres que la primera lñetra se pinte de roja */
+.parrafo-magic::first-letter {
+    color: red;
+}
+
+
+/* propiedad content */
+h1:before{
+    content:"capitulo 1";
+}
+
+p:after {
+    content:"." ;
+}
+
+.enlaces-pro:hover::after {
+    content: "♥";
+}
